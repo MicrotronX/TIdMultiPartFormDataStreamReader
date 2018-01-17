@@ -262,6 +262,14 @@ begin
 
               {$ENDIF}
 
+            end else if ( trim( transferEnconding ) = '' ) then begin
+
+              {$IFDEF STRING_IS_UNICODE}
+
+              cadStream := ReadStringAsCharset( stInfo, charSet );
+
+              {$ENDIF}
+
             end;
 
             {$IFDEF STRING_IS_ANSI}
